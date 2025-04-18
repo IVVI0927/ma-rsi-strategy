@@ -1,16 +1,27 @@
 # ma-rsi-strategy
-# MA+RSI Quant Strategy API
 
-📈 一个基于 MA+RSI 的 A 股量化策略，支持 FastAPI 部署与参数调优。
+## 📈 MA + RSI Quant Strategy API
 
-## 项目结构
-- `main.py`: 本地运行，绘图评估策略
-- `app.py`: FastAPI 接口，运行策略接口 /run_strategy
-- `optimize_and_plot.py`: 多组参数自动回测并保存最优结果
-- `signal_engine/`: 策略核心逻辑模块
-- `data/`: 数据源（可换成自己的股票数据）
+A simple quantitative strategy based on Moving Average (MA) and Relative Strength Index (RSI), supporting backtesting and FastAPI deployment.
 
-## 本地运行
+---
+
+## 🔧 Project Structure
+
+ma_agent_project/
+├── app.py                   # FastAPI API entry (POST /run_strategy)
+├── main.py                 # Run locally with plots (single strategy)
+├── optimize_and_plot.py    # Batch parameter testing & best selection
+├── requirements.txt        # Dependency list
+├── data/
+│   └── hs300_daily_2023_2025.csv
+├── signal_engine/
+│   ├── signal.py           # Signal generation (MA/RSI)
+│   ├── backtest.py         # Backtesting engine with stop-loss/take-profit
+│   └── plot_signals.py     # Plotting signal indicators
+---
+
+## 🚀 Quick Start
 
 ```bash
 pip install -r requirements.txt

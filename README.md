@@ -6,8 +6,9 @@ A simple quantitative strategy based on Moving Average (MA) and Relative Strengt
 
 ---
 
-## 🔧 Project Structure
+## 🛠 Project Structure
 
+```
 ma_agent_project/
 ├── app.py                   # FastAPI API entry (POST /run_strategy)
 ├── main.py                 # Run locally with plots (single strategy)
@@ -19,7 +20,7 @@ ma_agent_project/
 │   ├── signal.py           # Signal generation (MA/RSI)
 │   ├── backtest.py         # Backtesting engine with stop-loss/take-profit
 │   └── plot_signals.py     # Plotting signal indicators
----
+```
 
 ## 🚀 Quick Start
 

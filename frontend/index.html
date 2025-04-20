@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Today’s Top Picks</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #f4f4f4; }
+    .buy { color: green; font-weight: bold; }
+    .hold { color: orange; }
+    .sell { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Today’s Top Picks</h1>
+  <button id="refresh">刷新</button>
+  <table id="recommend-table">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Signal</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const API = 'http://127.0.0.1:8000/recommend';
+    const tbody = document.querySelector('#recommend-table tbody');
+    document.getElementById('refresh').addEventListener('click', load);
+
+    async function load() {
+      tbody.innerHTML = '<tr><td colspan="5">加载中…</td></tr>';
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          tbody.innerHTML = data.map(item => `
+            <tr>
+              <td>${item.code}</td>
+              <td>${item.name||''}</td>
+              <td>${item.score.toFixed(2)}</td>
+              <td class="${item.signal.toLowerCase()}">${item.signal}</td>
+              <td>${(item.reason||[]).join('; ')}</td>
+            </tr>
+          `).join('');
+        } else {
+          tbody.innerHTML = `<tr><td colspan="5">Error: ${data.message||JSON.stringify(data)}</td></tr>`;
+        }
+      } catch (e) {
+        tbody.innerHTML = `<tr><td colspan="5">Fetch Error: ${e.message}</td></tr>`;
+      }
+    }
+
+    // 首次加载
+    load();
+  </script>
+</body>
+</html>

@@ -1,42 +1,66 @@
-def run_backtest(df, take_profit=0.1, stop_loss=0.03):
-    df = df.copy()
-    capital = 100000
-    cash = capital
-    position = 0
-    entry_price = None
-    equity_curve = []
+import pandas as pd
+import numpy as np
+import os
+from datetime import datetime, timedelta
+from signal_engine.score_and_suggest import score_stock
+from jqdatasdk import auth
 
-    for i in range(1, len(df)):
-        price = df['Close'].iloc[i]
-        signal = df['Signal'].iloc[i]
+def run_backtest(start_date="2025-01-10", end_date="2025-01-16",
+                 top_n=5, hold_days=1):
+    # === 读取基准日期列表（使用任意一只股票）
+    sample = pd.read_csv("data/600519.SH.csv", index_col=0, parse_dates=True)
+    dates = sample.index
+    dates = dates[(dates >= pd.to_datetime(start_date)) & (dates <= pd.to_datetime(end_date))]
+    dates = sorted(dates.strftime("%Y-%m-%d").tolist())
 
-        if signal == 1 and position == 0:
-            entry_price = price
-            position = (cash * 0.5) / price
-            cash = cash * 0.5
-        elif signal == -1 and position > 0:
-            cash += position * price
-            position = 0
-            entry_price = None
-        elif position > 0 and entry_price:
-            gain_pct = (price - entry_price) / entry_price
-            if gain_pct >= take_profit or gain_pct <= -stop_loss:
-                cash += position * price
-                position = 0
-                entry_price = None
+    nav = 1_000_000
+    portfolio_values = []
 
-        total_value = cash + position * price
-        equity_curve.append(total_value)
+    for today in dates:
+        print(f"\n📅 Processing date: {today}")
+        scores = []
+        for f in os.listdir("data"):
+            if not f.endswith(".csv"):
+                continue
+            code = f.replace(".csv", "")
+            print(f"  📊 Scoring stock: {code}")
+            try:
+                s = score_stock(code)
+                scores.append((code, s["score"]))
+            except:
+                continue
 
-    final_value = equity_curve[-1]
-    profit_pct = (final_value - capital) / capital * 100
+        scores.sort(key=lambda x: x[1], reverse=True)
+        picks = [code for code, _ in scores[:top_n]]
 
-    peak = equity_curve[0]
-    max_drawdown = 0
-    for val in equity_curve:
-        if val > peak:
-            peak = val
-        drawdown = (peak - val) / peak
-        max_drawdown = max(max_drawdown, drawdown)
+        returns = []
+        for code in picks:
+            df = pd.read_csv(f"data/{code}.csv", index_col=0, parse_dates=True)
+            df.index = pd.to_datetime(df.index)
+            try:
+                open_price = df.at[pd.to_datetime(today), "close"]
+                sell_date = pd.to_datetime(today) + timedelta(days=hold_days)
+                sell_price = df.at[sell_date, "close"]
+                ret = (sell_price - open_price) / open_price
+            except:
+                ret = 0
+            returns.append(ret)
 
-    return profit_pct, max_drawdown * 100, equity_curve, df.index[-len(equity_curve):]
+        avg_return = np.mean(returns) if returns else 0
+        nav *= (1 + avg_return)
+        portfolio_values.append(nav)
+
+    pnl = pd.Series(portfolio_values, index=pd.to_datetime(dates))
+    stats = {
+        "total_return": round((nav / 1_000_000 - 1) * 100, 2),
+        "max_drawdown": round(((pnl.cummax() - pnl).max() / pnl.cummax().max()) * 100, 2)
+    }
+    return pnl, stats
+
+
+if __name__ == "__main__":
+    curve, stat = run_backtest(top_n=5, hold_days=1)
+    print("✅ 回测完成")
+    print("📈 总收益率：", stat["total_return"], "%")
+    print("📉 最大回撤：", stat["max_drawdown"], "%")
+    curve.plot(title="Backtest Net Value Curve")

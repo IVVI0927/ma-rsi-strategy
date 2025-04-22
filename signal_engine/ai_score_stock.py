@@ -1,5 +1,3 @@
-# signal_engine/ai_score_stock.py
-
 def ai_score_stock(features: dict) -> float:
     """
     模拟 AI 模型打分函数（可后续替换为真实模型）

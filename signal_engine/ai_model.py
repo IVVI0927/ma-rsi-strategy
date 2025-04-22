@@ -1,26 +1,53 @@
-# ai_model.py
 import requests
+import re
+import json
 
-def call_ai_model(features: dict) -> float:
-    """
-    调用本地或远程 AI 模型接口，根据输入特征返回预测分数。
-    参数：features 是一个 dict，包含如下字段：
-      - pe
-      - pb
-      - rsi
-      - macd
-      - ma_diff
-      - market_cap
-    返回：score（0~1 之间的浮点数）
-    """
-    url = "http://127.0.0.1:8000/predict"  # 模拟模型服务地址
+DEEPSEEK_API_KEY = "sk-969b8f7d7448431cab9bbecd2569d83d"
+
+def call_ai_model(factor_info: dict) -> dict:
+    # 🆕 示例情绪（你后面可以从爬虫或API动态获取）
+    simulated_sentiment = "positive"  # 可改为 negative / neutral
+    factor_info["news_sentiment"] = simulated_sentiment
+
+    prompt = f"""你是一个智能股票分析顾问。根据以下 A 股因子数据，给出一个 0-100 分的评分，并说明理由。
+注意：情绪因子值越正代表市场情绪越积极，越负代表情绪低迷。请综合判断：
+{factor_info}
+
+请返回一个标准 JSON 格式：
+{{"score": int, "reason": str}}"""
+
+    url = "https://api.deepseek.com/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+        "Content-Type": "application/json"
+    }
+
+    body = {
+        "model": "deepseek-chat",
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.7
+    }
+
+    response = requests.post(url, json=body, headers=headers)
+    result = response.json()
+
+    print("🔁 Raw API response:", result)
+
+    if 'choices' not in result:
+        return {
+            "score": 50,
+            "reason": f"LLM API错误响应：{result.get('error', '未知错误')}"
+        }
+
+    content = result['choices'][0]['message']['content']
+
     try:
-        res = requests.post(url, json=features, timeout=3)
-        if res.status_code == 200:
-            return res.json().get("score", 0.5)
+        # 提取 markdown 格式中的 JSON 内容
+        match = re.search(r"```json\n(.*?)\n```", content, re.DOTALL)
+        if match:
+            clean_json = match.group(1)
+            return json.loads(clean_json)
         else:
-            print(f"⚠️ AI模型返回错误码：{res.status_code} → {res.text}")
-            return 0.5
+            return {"score": 50, "reason": f"解析失败，AI输出内容：{content}"}
     except Exception as e:
-        print("❌ 无法连接 AI 模型接口：", e)
-        return 0.5
+        return {"score": 50, "reason": f"解析异常：{str(e)}，原始内容：{content}"}

@@ -105,3 +105,90 @@ def get_pe_pb(code):
         }
     except Exception:
         return {"pe_ttm": None, "pb": None, "market_cap": None}'''
+
+def get_roe(code, date="2025-01-16"):
+    from jqdatasdk import finance
+    jq_code = code.replace(".SH", ".XSHG").replace(".SZ", ".XSHE")
+    try:
+        q = query(finance.STK_FIN_INDICATOR.roe).filter(finance.STK_FIN_INDICATOR.code == jq_code)
+        df = finance.run_query(q)
+        if df.empty:
+            return None
+        return float(df["roe"].iloc[-1])
+    except Exception as e:
+        print(f"❌ get_roe error for {code}: {e}")
+        return None
+
+def get_net_profit_margin(code, date="2025-01-16"):
+    from jqdatasdk import finance
+    jq_code = code.replace(".SH", ".XSHG").replace(".SZ", ".XSHE")
+    try:
+        q = query(finance.STK_FIN_INDICATOR.net_profit_margin).filter(finance.STK_FIN_INDICATOR.code == jq_code)
+        df = finance.run_query(q)
+        if df.empty:
+            return None
+        return float(df["net_profit_margin"].iloc[-1])
+    except Exception as e:
+        print(f"❌ get_net_profit_margin error for {code}: {e}")
+        return None
+
+def get_debt_ratio(code, date="2025-01-16"):
+    from jqdatasdk import finance
+    jq_code = code.replace(".SH", ".XSHG").replace(".SZ", ".XSHE")
+    try:
+        q = query(finance.STK_BALANCE_SHEET.total_liability, finance.STK_BALANCE_SHEET.total_assets).filter(finance.STK_BALANCE_SHEET.code == jq_code)
+        df = finance.run_query(q)
+        if df.empty:
+            return None
+        liabilities = float(df["total_liability"].iloc[-1])
+        assets = float(df["total_assets"].iloc[-1])
+        return liabilities / assets if assets != 0 else None
+    except Exception as e:
+        print(f"❌ get_debt_ratio error for {code}: {e}")
+        return None
+
+def get_profit_growth(code, date="2025-01-16"):
+    from jqdatasdk import finance
+    jq_code = code.replace(".SH", ".XSHG").replace(".SZ", ".XSHE")
+    try:
+        q = query(finance.STK_FIN_INDICATOR.inc_net_profit_year_on_year).filter(finance.STK_FIN_INDICATOR.code == jq_code)
+        df = finance.run_query(q)
+        if df.empty:
+            return None
+        return float(df["inc_net_profit_year_on_year"].iloc[-1])
+    except Exception as e:
+        print(f"❌ get_profit_growth error for {code}: {e}")
+        return None
+    
+def get_ps(code, date="2025-01-16"):
+    from jqdatasdk import finance
+    jq_code = code.replace(".SH", ".XSHG").replace(".SZ", ".XSHE")
+    try:
+        q = query(finance.STK_FIN_INDICATOR.ps).filter(finance.STK_FIN_INDICATOR.code == jq_code)
+        df = finance.run_query(q)
+        if df.empty:
+            return None
+        return float(df["ps"].iloc[-1])
+    except Exception as e:
+        print(f"❌ get_ps error for {code}: {e}")
+        return None
+
+def get_turnover_rate(code, date="2025-01-16"):
+    from jqdatasdk import get_price
+    jq_code = code.replace(".SH", ".XSHG").replace(".SZ", ".XSHE")
+    try:
+        df = get_price(jq_code, start_date=date, end_date=date, frequency='daily', fields=['turnover_rate'])
+        if df.empty:
+            return None
+        return float(df["turnover_rate"].iloc[0])
+    except Exception as e:
+        print(f"❌ get_turnover_rate error for {code}: {e}")
+        return None
+
+def get_volume_change(df, window=5):
+    df.columns = [col.capitalize() for col in df.columns]
+    if len(df) < window + 1:
+        return None
+    prev_avg = df["Volume"].iloc[-(window+1):-1].mean()
+    curr = df["Volume"].iloc[-1]
+    return (curr - prev_avg) / prev_avg if prev_avg != 0 else None

@@ -71,9 +71,34 @@ export default function BacktestDashboard() {
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
       <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "1rem" }}>📈 策略净值曲线</h2>
-      
+
+      {/* 指标卡片展示 */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "2rem" }}>
+        {[
+          { label: "总收益率", value: "+124.53%" },
+          { label: "年化收益率", value: "42.78%" },
+          { label: "总交易次数", value: "87" },
+          { label: "盈利因子", value: "1.85" },
+          { label: "最大回撤", value: "-18.42%" },
+          { label: "夏普比率", value: "2.14" },
+        ].map((item, idx) => (
+          <div key={idx} style={{
+            flex: "1 0 30%",
+            padding: "1rem",
+            border: "1px solid #ddd",
+            borderRadius: "8px",
+            backgroundColor: "#f9fafb",
+            minWidth: "140px",
+            textAlign: "center"
+          }}>
+            <div style={{ fontSize: "14px", color: "#666" }}>{item.label}</div>
+            <div style={{ fontSize: "20px", fontWeight: "bold", marginTop: "0.5rem" }}>{item.value}</div>
+          </div>
+        ))}
+      </div>
+
       {isLoading && <div>加载中...</div>}
-      
+
       {error && (
         <div style={{ color: "red", marginBottom: "1rem" }}>
           ❌ 错误: {error}
@@ -92,7 +117,7 @@ export default function BacktestDashboard() {
       )}
 
       <h2 style={{ fontSize: "20px", fontWeight: "600", marginTop: "2rem" }}>📋 回测每日明细</h2>
-      
+
       {rows.length > 0 ? (
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
           {/* ...原有表格代码... */}

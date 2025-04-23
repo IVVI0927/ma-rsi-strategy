@@ -1,4 +1,3 @@
-
 import pandas as pd
 from signal_engine.signal import generate_signal
 from signal_engine.backtest import run_backtest
@@ -21,7 +20,7 @@ print(f"📉 最大回撤：{drawdown:.2f}%")
 
 plot_signals(df, ma_short, ma_long, rsi_threshold)
 
-# 可视化 买卖点图，自动保存
+# 可视化买卖点图，自动保存
 plt.figure(figsize=(14, 6))
 plt.plot(df.index, df['Close'], label='Close Price', linewidth=1)
 plt.plot(df.index, df['MA_short'], linestyle='--', label=f'MA{ma_short}')

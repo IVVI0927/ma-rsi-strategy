@@ -58,6 +58,6 @@ def analyze_backtest(curve: pd.Series, stats: dict, output_prefix="backtest"):
     plt.close(fig)
 
 if __name__ == "__main__":
-    # 直接调用你原来的 run_backtest
+    # 直接调用 run_backtest
     curve, stats = run_backtest(top_n=5, hold_days=1)
     analyze_backtest(curve, stats)

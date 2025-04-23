@@ -1,5 +1,3 @@
-# app_frontend.py
-
 import pandas as pd
 import streamlit as st
 
@@ -21,5 +19,5 @@ df_sorted = df.sort_values(by="score", ascending=False).head(top_n)
 # 显示结果表格
 st.dataframe(df_sorted, use_container_width=True)
 
-# 显示分析图（可选）
+# 显示分析图
 st.line_chart(df_sorted["score"])

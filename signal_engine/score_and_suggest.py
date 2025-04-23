@@ -24,7 +24,7 @@ def score_stock(code, use_ai_model=False):
     df = pd.read_csv(f"data/{code}.csv")
     df.columns = [col.capitalize() for col in df.columns]
 
-    # === 技术指标 ===
+    # 技术指标
     rsi_signal = get_latest_rsi_signal(df)
     ma_signal = get_ma_signal(df)
     macd_signal = get_macd_signal(df)

@@ -4,7 +4,7 @@ import datetime
 
 # 初始化参数
 initial_capital = 100000
-transaction_fee_rate = 0.0015  # 买入 + 卖出手续费估算
+transaction_fee_rate = 0.0015  # 买入 + 卖出手续费
 take_profit = 0.10  # 止盈阈值
 stop_loss = 0.05    # 止损阈值
 

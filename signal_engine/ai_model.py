@@ -5,7 +5,7 @@ import json
 DEEPSEEK_API_KEY = "sk-969b8f7d7448431cab9bbecd2569d83d"
 
 def call_ai_model(factor_info: dict) -> dict:
-    # 🆕 示例情绪（你后面可以从爬虫或API动态获取）
+    # 示例情绪（之后可以从爬虫或API动态获取）
     simulated_sentiment = "positive"  # 可改为 negative / neutral
     factor_info["news_sentiment"] = simulated_sentiment
 

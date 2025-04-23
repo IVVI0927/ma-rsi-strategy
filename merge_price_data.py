@@ -13,7 +13,7 @@ for file in all_files:
     try:
         df = pd.read_csv(path, header=None)
 
-        # 尝试识别数据结构并赋予列名
+        # 识别数据结构、赋予列名
         if df.shape[1] >= 6:
             df = df.iloc[:, :6]
             df.columns = ["date", "open", "high", "low", "close", "volume"]
@@ -23,7 +23,7 @@ for file in all_files:
             print(f"⚠️ 无法识别列结构：{file}（列数: {df.shape[1]}）")
             continue
 
-        # 确保日期列为日期格式
+        # 确保日期列格式
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df = df.dropna(subset=["date", "close"])  # 至少需要这两列有效
 

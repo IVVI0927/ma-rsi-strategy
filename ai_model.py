@@ -15,7 +15,7 @@ def call_ai_model(factor_info: dict) -> dict:
     }
 
     body = {
-        "model": "deepseek-chat",  # 根据平台的模型名称填写
+        "model": "deepseek-chat",  # 平台模型名称
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.7
     }
@@ -25,6 +25,6 @@ def call_ai_model(factor_info: dict) -> dict:
     content = result['choices'][0]['message']['content']
 
     try:
-        return eval(content)  # ⚠️建议替换为 json.loads(content)
+        return eval(content)  # 建议替换为 json.loads(content)
     except:
         return {"score": 50, "reason": "解析失败，请检查AI输出"}

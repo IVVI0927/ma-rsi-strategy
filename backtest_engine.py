@@ -2,17 +2,16 @@ import pandas as pd
 import math
 import datetime
 
-# 初始化参数
 initial_capital = 100000
-transaction_fee_rate = 0.0015  # 买入 + 卖出手续费
+transaction_fee_rate = 0.0015  # 手续费
 take_profit = 0.10  # 止盈阈值
 stop_loss = 0.05    # 止损阈值
 
-# 加载历史行情数据（示例）
+# 加载Data
 data = pd.read_csv("data/hs300_daily_2025_01.csv", parse_dates=["date"])
 data = data.sort_values(by=["date", "code"]).reset_index(drop=True)
 
-# 模拟每日推荐结果（替换成实际推荐输出）
+# 每日推荐结果（模拟）
 def get_daily_recommendations(date):
     try:
         df = pd.read_csv("today_recommendations.csv")
@@ -21,7 +20,7 @@ def get_daily_recommendations(date):
     except:
         return []
 
-# 获取个股某日价格
+# 获取个股某日价格?
 def get_price(code, date):
     row = data[(data["code"] == code) & (data["date"] == date)]
     return row["close"].values[0] if not row.empty else None
@@ -78,7 +77,7 @@ def run_backtest():
             buy_pool = buy_df[["code", "weight"]].values.tolist()
             print("📊 推荐买入池：", buy_pool)
 
-        # 加权买入
+        # 加权买
         for code, weight in buy_pool:
             price = get_price(code, date)
             if price is None:

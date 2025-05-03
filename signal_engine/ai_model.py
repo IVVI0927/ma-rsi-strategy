@@ -5,8 +5,8 @@ import json
 DEEPSEEK_API_KEY = "sk-969b8f7d7448431cab9bbecd2569d83d"
 
 def call_ai_model(factor_info: dict) -> dict:
-    # 示例情绪（之后可以从爬虫或API动态获取）
-    simulated_sentiment = "positive"  # 可改为 negative / neutral
+    # 示例情绪（后续爬虫/API动态）
+    simulated_sentiment = "positive"  # negative / neutral
     factor_info["news_sentiment"] = simulated_sentiment
 
     prompt = f"""你是一个智能股票分析顾问。根据以下 A 股因子数据，给出一个 0-100 分的评分，并说明理由。

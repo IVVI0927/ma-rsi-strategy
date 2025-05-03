@@ -16,8 +16,8 @@ except FileNotFoundError:
 top_n = st.slider("Show top N stocks by score", min_value=1, max_value=20, value=10)
 df_sorted = df.sort_values(by="score", ascending=False).head(top_n)
 
-# 显示结果表格
+# 输出表格
 st.dataframe(df_sorted, use_container_width=True)
 
-# 显示分析图
+# 输出图
 st.line_chart(df_sorted["score"])

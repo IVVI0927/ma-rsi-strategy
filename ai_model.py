@@ -15,7 +15,7 @@ def call_ai_model(factor_info: dict) -> dict:
     }
 
     body = {
-        "model": "deepseek-chat",  # 平台模型名称
+        "model": "deepseek-chat",  # 使用的模型名称
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.7
     }

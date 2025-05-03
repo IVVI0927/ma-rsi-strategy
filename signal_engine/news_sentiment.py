@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-# 情绪关键词词典（可以继续扩展）
+# 情绪关键词词典（继续扩展）
 POSITIVE_WORDS = ["看好", "利好", "涨停", "创新高", "加仓", "布局", "强势"]
 NEGATIVE_WORDS = ["利空", "割肉", "亏", "大跌", "跳水", "崩了", "出货"]
 
@@ -43,8 +43,8 @@ def get_sentiment(stock_code: str) -> str:
     sentiment = analyze_sentiment(titles)
     return sentiment
 
-# 示例运行
+# 示例
 if __name__ == "__main__":
-    code = "sz300750"  # 可替换为目标股票代码
+    code = "sz300750"  # 可替换
     sentiment = get_sentiment(code)
     print(f"🎯 股票 {code} 的情绪判断结果：{sentiment}")

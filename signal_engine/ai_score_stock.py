@@ -10,7 +10,7 @@ def ai_score_stock(features: dict) -> float:
     pb        = features.get("pb", 1)
     volatility = features.get("volatility", 0.02)
 
-    # 简化版模型：可以看作是未来ML模型的线性近似
+    # 简化版（线性近似）
     score = (
         0.3 * (rsi / 100) +
         0.3 * ma_diff -

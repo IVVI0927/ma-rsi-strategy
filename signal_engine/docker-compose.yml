@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quant_backend
+    volumes:
+      - ./data:/app/data     # ✅ 映射本地 data 文件夹到容器内部
+    working_dir: /app
+    command: python backtest_engine.py
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: quant_frontend
+    ports:
+      - "5173:80"             # ✅ 外部访问：http://localhost:5173

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Papa from "papaparse";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
+import { ChartDataset, ChartData } from 'chart.js';
 
 // 注册Chart.js必要组件
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
@@ -15,10 +16,7 @@ type BacktestRow = {
 };
 
 export default function BacktestDashboard() {
-  const [data, setData] = useState<{
-    labels: string[];
-    datasets: { label: string; data: number[]; fill: boolean; tension: number }[];
-  } | null>(null);
+  const [data, setData] = useState<ChartData<'line', number> | null>(null);
   const [rows, setRows] = useState<BacktestRow[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -50,15 +48,17 @@ export default function BacktestDashboard() {
         const dates = cleaned.map((r) => r.date);
         const values = cleaned.map((r) => parseFloat(r.total_asset));
 
+        const datasets: ChartDataset<'line', number[]>[] = [{
+          label: "净值曲线",
+          data: values,
+          fill: false,
+          tension: 0.3,
+          borderColor: '#4f46e5', // 添加颜色配置
+        }];
+
         setData({
           labels: dates,
-          datasets: [{
-            label: "净值曲线",
-            data: values,
-            fill: false,
-            tension: 0.3,
-            borderColor: '#4f46e5', // 添加颜色配置
-          }],
+          datasets
         });
         setRows(cleaned);
       })

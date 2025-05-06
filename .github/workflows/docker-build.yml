@@ -1,0 +1,39 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main  # 每次 push 到 main 分支自动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v3
+
+      - name: 设置 Node.js 环境（构建前端）
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 安装依赖并构建前端
+        working-directory: frontend
+        run: |
+          npm install
+          npm run build
+
+      - name: 设置 Python 环境（测试后端）
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 安装后端依赖
+        run: pip install -r requirements.txt
+
+      - name: 执行回测逻辑
+        run: python backtest_engine.py
+
+      - name: 检查 Docker 能否构建成功
+        run: docker compose build

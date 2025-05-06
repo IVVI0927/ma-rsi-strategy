@@ -16,7 +16,7 @@ type BacktestRow = {
 };
 
 export default function BacktestDashboard() {
-  const [data, setData] = useState<ChartData<'line', number> | null>(null);
+  const [data, setData] = useState<ChartData<'line', number[]> | null>(null);
   const [rows, setRows] = useState<BacktestRow[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

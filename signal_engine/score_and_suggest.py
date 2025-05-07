@@ -1,4 +1,5 @@
 print("▶▶▶ Using 6‑factor scoring ▶▶▶")
+from es.es_client import es
 import pandas as pd
 import os
 from signal_engine.fundamentals import get_pe_pb
@@ -121,6 +122,16 @@ def score_stock(code, use_ai_model=False):
         "reason": reason
     }
 
+def get_today_scores():
+    """提供 FastAPI 接口调用今日打分推荐"""
+    if not os.path.exists("today_recommendations.csv"):
+        return []
+
+    df = pd.read_csv("today_recommendations.csv")
+    df = df.sort_values(by="score", ascending=False)
+    results = df.to_dict(orient="records")
+    return results
+
 if __name__ == "__main__":
     all_codes = [
         f.replace(".csv", "")
@@ -137,9 +148,20 @@ if __name__ == "__main__":
     df = df.sort_values(by="score", ascending=False)
     df.to_csv("today_recommendations.csv", index=False)
 
+    # 将推荐结果转换为 {code: score} 字典形式，并写入 Redis
+    score_result_dict = {row['code']: row['score'] for _, row in df.iterrows()}
+    from redis_score_store import RedisScoreStore
+    store = RedisScoreStore()
+    store.save_score(score_result_dict)
+
 # 可选：在推荐完成后直接生成组合建议
 portfolio = build_portfolio(df, capital=50000, max_stocks=5)
 portfolio.to_csv("today_portfolio.csv", index=False)
 print("✅ 今日推荐已保存至 today_recommendations.csv")
 
 log_file.close()
+
+# 将推荐结果写入 Elasticsearch
+for _, row in df.iterrows():
+    doc = row.to_dict()
+    es.index(index="stock_scores", body=doc)

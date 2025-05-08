@@ -22,7 +22,7 @@ export default function StockDetail() {
       <div>
         <h3 className="font-semibold">📊 因子详情：</h3>
         <ul className="list-disc ml-5">
-          {Object.entries(data).map(([key, value]) => {
+          {Object.entries(data).map(([key, value]: [string, any]) => {
             if (["code", "score", "reason"].includes(key)) return null;
             return (
               <li key={key}>

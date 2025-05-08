@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ScoreItem {
     code: string;
@@ -30,7 +31,11 @@ export default function ScoreDashboard() {
         <h2 className="text-xl font-bold mb-2">🎯 今日推荐（CSV）</h2>
         <ul className="list-disc ml-5">
           {todayScores.map((item, idx) => (
-            <li key={idx}>{item.code} - 得分: {item.score}</li>
+            <li key={idx}>
+              <Link to={`/stock/${item.code}`} className="text-blue-600 hover:underline">
+                {item.code} - 得分: {item.score}
+              </Link>
+            </li>
           ))}
         </ul>
       </section>
@@ -48,7 +53,11 @@ export default function ScoreDashboard() {
         <h2 className="text-xl font-bold mb-2">🔍 Elasticsearch 高分推荐</h2>
         <ul className="list-disc ml-5">
           {esScores.map((item, idx) => (
-            <li key={idx}>{item.code} - 得分: {item.score}</li>
+            <li key={idx}>
+              <Link to={`/stock/${item.code}`} className="text-blue-600 hover:underline">
+                {item.code} - 得分: {item.score}
+              </Link>
+            </li>
           ))}
         </ul>
       </section>

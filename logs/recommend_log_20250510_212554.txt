@@ -1,0 +1,15 @@
+2025-05-10 21:26:24,824 - ERROR - Error fetching data for 600030.SH: HTTP Error 404: 
+2025-05-10 21:26:49,541 - ERROR - Error fetching data for 600309.SH: HTTP Error 404: 
+2025-05-10 21:26:53,608 - INFO - Scored 000858.SZ: {'symbol': '000858.SZ', 'score': 0.35, 'suggest': 'HOLD', 'fundamentals': {'pe_ttm': 15.627078, 'pb': 3.447571, 'market_cap': 510.742233088, 'dividend_yield': 551.0, 'beta': 1.144, 'sector': 'Consumer Defensive', 'industry': 'Beverages - Wineries & Distilleries'}}
+2025-05-10 21:26:56,905 - INFO - Scored 002236.SZ: {'symbol': '002236.SZ', 'score': 0.5, 'suggest': 'HOLD', 'fundamentals': {'pe_ttm': 16.989248, 'pb': 1.4100848, 'market_cap': 52.126728192, 'dividend_yield': 648.0, 'beta': 0.766, 'sector': 'Industrials', 'industry': 'Security & Protection Services'}}
+2025-05-10 21:26:59,834 - INFO - Scored 000651.SZ: {'symbol': '000651.SZ', 'score': 0.5, 'suggest': 'HOLD', 'fundamentals': {'pe_ttm': 7.7685947, 'pb': 1.811315, 'market_cap': 263.266271232, 'dividend_yield': 505.99999999999994, 'beta': 0.541, 'sector': 'Consumer Cyclical', 'industry': 'Furnishings, Fixtures & Appliances'}}
+2025-05-10 21:27:20,521 - ERROR - $600104.SH: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 21:27:40,009 - ERROR - $600519.SH: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 21:27:58,989 - ERROR - $600000.SH: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 21:28:20,633 - ERROR - $600036.SH: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 21:28:24,284 - INFO - Scored 000333.SZ: {'symbol': '000333.SZ', 'score': 0.35, 'suggest': 'HOLD', 'fundamentals': {'pe_ttm': 13.205576, 'pb': 2.4981875, 'market_cap': 577.712750592, 'dividend_yield': 396.0, 'beta': 0.95, 'sector': 'Consumer Cyclical', 'industry': 'Furnishings, Fixtures & Appliances'}}
+2025-05-10 21:28:27,425 - INFO - Scored 002714.SZ: {'symbol': '002714.SZ', 'score': 0.35, 'suggest': 'HOLD', 'fundamentals': {'pe_ttm': 8.759999, 'pb': 2.8044963, 'market_cap': 215.342383104, 'dividend_yield': 212.0, 'beta': 0.908, 'sector': 'Consumer Defensive', 'industry': 'Farm Products'}}
+2025-05-10 21:29:11,131 - ERROR - $600031.SH: possibly delisted; no price data found  (period=1y)
+2025-05-10 21:29:12,455 - ERROR - Failed to get ticker 'HS300_DAILY_2025_01' reason: Failed to perform, curl: (16) . See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2025-05-10 21:29:16,932 - ERROR - $HS300_DAILY_2025_01: possibly delisted; no price data found  (period=1y)
+2025-05-10 21:29:18,835 - ERROR - Failed to get ticker '000001.SZ' reason: Failed to perform, curl: (16) . See https://curl.se/libcurl/c/libcurl-errors.html first for more details.

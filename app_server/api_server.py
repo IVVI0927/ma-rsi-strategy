@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Header, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
@@ -15,9 +15,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+API_TOKEN = "your_api_token"  # 可放到.env
+
+def verify_token(x_token: str = Header(...)):
+    if x_token != API_TOKEN:
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
 # ✅ 定义 API 路由
 @app.get("/api/get_today_scores")
-def fetch_today_scores():
+def fetch_today_scores(token: str = Depends(verify_token)):
     return get_today_scores()
 
 # ✅ 如果你有前端打包好的dist目录，可以这样挂载静态文件

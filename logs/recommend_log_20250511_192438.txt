@@ -1,0 +1,81 @@
+2025-05-11 19:24:55,575 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:24:55,576 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:24:55,576 - INFO - Scored 600030.SH: {'code': '600030.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:24:55,576 - INFO - Scored 600030.SH: 0.15
+2025-05-11 19:25:11,353 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:11,355 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:11,355 - INFO - Scored 600309.SH: {'code': '600309.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:11,355 - INFO - Scored 600309.SH: 0.15
+2025-05-11 19:25:29,489 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:29,490 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:29,490 - INFO - Scored 000858.SZ: {'code': '000858.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:29,490 - INFO - Scored 000858.SZ: 0.15
+2025-05-11 19:25:44,250 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:44,251 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:44,251 - INFO - Scored 002236.SZ: {'code': '002236.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:44,251 - INFO - Scored 002236.SZ: 0.15
+2025-05-11 19:25:45,688 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:45,688 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:45,690 - INFO - Scored 000651.SZ: {'code': '000651.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.0, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:45,690 - INFO - Scored 000651.SZ: 0.0
+2025-05-11 19:25:47,190 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:47,190 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:47,190 - INFO - Scored 600104.SH: {'code': '600104.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:47,190 - INFO - Scored 600104.SH: 0.15
+2025-05-11 19:25:48,901 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:48,901 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:48,901 - INFO - Scored 600519.SH: {'code': '600519.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:48,901 - INFO - Scored 600519.SH: 0.15
+2025-05-11 19:25:50,419 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:50,419 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:50,419 - INFO - Scored 600000.SH: {'code': '600000.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.0, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:50,419 - INFO - Scored 600000.SH: 0.0
+2025-05-11 19:25:51,934 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:51,935 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:51,935 - INFO - Scored 600036.SH: {'code': '600036.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.0, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:51,935 - INFO - Scored 600036.SH: 0.0
+2025-05-11 19:25:53,412 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:53,412 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:53,412 - INFO - Scored 000333.SZ: {'code': '000333.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.0, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:53,412 - INFO - Scored 000333.SZ: 0.0
+2025-05-11 19:25:55,018 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:55,018 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:55,018 - INFO - Scored 002714.SZ: {'code': '002714.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:55,018 - INFO - Scored 002714.SZ: 0.15
+2025-05-11 19:25:56,497 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:56,498 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:56,498 - INFO - Scored 600031.SH: {'code': '600031.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.35, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:56,498 - INFO - Scored 600031.SH: 0.35
+2025-05-11 19:25:57,899 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:57,900 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:57,900 - INFO - Scored 000001.SZ: {'code': '000001.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.0, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:57,900 - INFO - Scored 000001.SZ: 0.0
+2025-05-11 19:25:59,274 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:59,275 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:25:59,275 - INFO - Scored 002415.SZ: {'code': '002415.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:25:59,275 - INFO - Scored 002415.SZ: 0.15
+2025-05-11 19:26:00,756 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:00,757 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:00,757 - INFO - Scored 600438.SH: {'code': '600438.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:26:00,757 - INFO - Scored 600438.SH: 0.15
+2025-05-11 19:26:02,309 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:02,309 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:02,309 - INFO - Scored 300750.SZ: {'code': '300750.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:26:02,309 - INFO - Scored 300750.SZ: 0.15
+2025-05-11 19:26:03,775 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:03,775 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:03,776 - INFO - Scored 000725.SZ: {'code': '000725.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.0, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:26:03,776 - INFO - Scored 000725.SZ: 0.0
+2025-05-11 19:26:05,427 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:05,428 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:05,428 - INFO - Scored 002352.SZ: {'code': '002352.SZ', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:26:05,428 - INFO - Scored 002352.SZ: 0.15
+2025-05-11 19:26:07,690 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:07,691 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:07,691 - INFO - Scored 600048.SH: {'code': '600048.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:26:07,691 - INFO - Scored 600048.SH: 0.15
+2025-05-11 19:26:09,125 - INFO - Available columns in indicator data: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:09,125 - ERROR - No code column found in indicator data. Available columns: ['trade_date', 'pe', 'pe_ttm', 'pb', 'dv_ratio', 'dv_ttm', 'ps', 'ps_ttm', 'total_mv']
+2025-05-11 19:26:09,125 - INFO - Scored 601318.SH: {'code': '601318.SH', 'pe': None, 'pb': None, 'market_cap': None, 'score': 0.15, 'suggest': 'HOLD', 'reason': 'Rule-based logic'}
+2025-05-11 19:26:09,125 - INFO - Scored 601318.SH: 0.15
+2025-05-11 19:26:09,139 - INFO - Results saved to today_recommendations.csv

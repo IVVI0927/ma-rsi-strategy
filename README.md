@@ -1,141 +1,147 @@
-# 📊 A-Share Quantitative Stock Selection System
+# 📊 US Stock Market Quantitative Trading System
 
-A lightweight quantitative stock selection system for Chinese A-shares, featuring multi-factor evaluation, backtesting, and portfolio suggestions.
+A professional-grade quantitative trading system for US stocks, featuring multi-factor evaluation, machine learning integration, and real-time portfolio management.
 
 ## 📁 Project Structure
 
 ```
 ma_agent_project/
-├── signal_engine/
-│   ├── fundamentals.py           # Basic financial factors (PE, PB, market cap)
-│   ├── signal.py                 # Technical indicators (RSI, MA, MACD)
-│   ├── ai_model.py               # AI model calling interface (mock API)
-│   ├── score_and_suggest.py     # Core scoring logic with AI model
-│   ├── portfolio_builder.py     # Portfolio construction based on user capital
-│   └── backtest.py              # Backtesting engine for strategy evaluation
-├── app_server/
-│   └── api_server.py            # FastAPI interface (recommendation endpoints)
-├── data/
-│   └── hs300_daily_2023_2025.csv   # Daily A-share data (local sample)
-├── update_daily.py              # Daily run script to refresh today_recommendations.csv
-├── app_frontend.py              # Streamlit / Web UI demo (optional)
-└── requirements.txt             # Dependencies
+├── src/
+│   ├── data/
+│   │   ├── fetchers/           # Data fetching modules
+│   │   └── processors/         # Data processing modules
+│   ├── models/
+│   │   ├── ml/                # Machine learning models
+│   │   └── technical/         # Technical analysis models
+│   ├── trading/
+│   │   ├── strategies/        # Trading strategies
+│   │   └── portfolio/         # Portfolio management
+│   └── utils/                 # Utility functions
+├── tests/                     # Test suite
+├── config/                    # Configuration files
+├── logs/                      # Log files
+├── docs/                      # Documentation
+└── scripts/                   # Utility scripts
 ```
 
 ## ✅ Key Features
 
-### 1. Multi-Factor Scoring System
-- Technical Factors: MA, RSI, MACD
-- Fundamental Factors: PE, PB, Market Cap
-- Customizable factor weights
-- Daily automatic scoring and recommendations
+### 1. Advanced Data Processing
+- Real-time market data integration
+- Historical data management
+- Data quality validation
+- Efficient data storage and retrieval
 
-### 2. Data Sources
-- JoinQuant data (jqdatasdk)
-- Local CSV data backup
-- Automatic data updates
+### 2. Machine Learning Integration
+- Feature engineering pipeline
+- Model training and validation
+- Real-time prediction system
+- Model performance monitoring
 
-### 3. Portfolio Suggestions
-- Automatic stock selection based on scores
-- A-share trading rules (100-share minimum)
-- Capital allocation and position control
-- Price limit considerations
+### 3. Trading Strategies
+- Multi-factor analysis
+- Technical indicators
+- Risk management
+- Position sizing
+- Portfolio optimization
 
-### 4. Backtesting System
-- Historical data backtesting
-- Performance metrics calculation
-- Visualization of results
+### 4. System Architecture
+- Modular design
+- Scalable infrastructure
+- Real-time processing
+- Error handling and recovery
 
-### 5. Web API
-- FastAPI interface
-- Real-time score queries
-- Portfolio suggestion endpoints
+### 5. Monitoring and Logging
+- Comprehensive logging system
+- Performance metrics
+- System health monitoring
+- Alert system
 
 ## 🚀 Quick Start
 
 ### Requirements
-- Python 3.8+
-- JoinQuant account
+- Python 3.11+
+- Poetry for dependency management
 
 ### Installation
 ```bash
-pip install -r requirements.txt
+# Install Poetry
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Install dependencies
+poetry install
 ```
 
 ### Configuration
-1. Configure JoinQuant credentials in `signal_engine/fundamentals.py`:
-```python
-auth("your_username", "your_password")
+1. Create a `.env` file in the project root:
+```env
+ALPHA_VANTAGE_API_KEY=your_api_key
+FINNHUB_API_KEY=your_api_key
 ```
 
-2. Place A-share data files in the `data` directory:
-- Format: `600519.SH.csv` (Shanghai) or `000001.SZ.csv` (Shenzhen)
-- Required fields: Date, Open, High, Low, Close, Volume
+2. Configure logging in `config/logging.yaml`
 
 ### Running
 ```bash
-# Run main program
-python main.py
+# Run tests
+poetry run pytest
 
-# Start API server
-uvicorn app_server.api_server:app --reload
+# Start the application
+poetry run python src/main.py
 ```
 
-## 📊 Scoring Logic
+## 📊 Development
 
-### Technical Indicators (60% weight)
-- RSI (Relative Strength Index): 30%
-- MA (Moving Average): 30%
-- MACD (Trend Indicator): 40%
+### Code Quality
+- Black for code formatting
+- Flake8 for linting
+- Pytest for testing
+- Coverage reporting
 
-### Fundamental Factors (40% weight)
-- PE (Price-to-Earnings): 30%
-- PB (Price-to-Book): 30%
-- Market Cap: 40%
+### CI/CD Pipeline
+- Automated testing
+- Code quality checks
+- Documentation generation
+- Deployment automation
 
-## 🌐 API Endpoints
+## 📈 Output and Logging
 
-### Get Today's Recommendations
-```
-GET /api/get_today_scores
-```
-
-### Get Portfolio Suggestions
-```
-GET /api/recommend_portfolio?capital=100000&max_stocks=5
-```
-
-## 📈 Output Files
-
-- `today_recommendations.csv`: Daily scoring results
-- `today_portfolio.csv`: Portfolio suggestions
-- `logs/recommend_log_*.txt`: Operation logs
+- `logs/`: Application logs
+- `data/processed/`: Processed data files
+- `models/saved/`: Trained model files
+- `reports/`: Generated reports
 
 ## 🔧 Development Guide
 
-### Adding New Factors
-1. Create new factor file in `signal_engine` directory
-2. Integrate new factor in `score_and_suggest.py`
-3. Adjust weight configuration
+### Adding New Features
+1. Create feature branch
+2. Implement changes
+3. Add tests
+4. Update documentation
+5. Submit PR
 
-### Customizing Scoring Rules
-Modify the `calculate_score` function in `score_and_suggest.py`
+### Code Style
+- Follow PEP 8
+- Use type hints
+- Write docstrings
+- Maintain test coverage
 
 ## 📝 Important Notes
 
-1. Data Updates
-   - Ensure daily local data updates
-   - Check JoinQuant data connection status
+1. Data Management
+   - Regular data validation
+   - Backup procedures
+   - Data versioning
 
-2. Risk Control
-   - Implement stop-loss
-   - Position sizing
-   - Market risk consideration
+2. Risk Management
+   - Position limits
+   - Stop-loss rules
+   - Risk metrics monitoring
 
 3. System Maintenance
-   - Regular log checks
-   - Performance monitoring
-   - Data backup
+   - Regular updates
+   - Performance optimization
+   - Security patches
 
 ## 🤝 Contributing
 
@@ -147,3 +153,10 @@ Modify the `calculate_score` function in `score_and_suggest.py`
 ## 📄 License
 
 MIT License
+
+## 🔐 Security
+
+- API key management
+- Data encryption
+- Access control
+- Regular security audits

@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def analyze_backtest(path="backtest_result.csv"):
+def analyze_backtest(path: str = "backtest_result.csv") -> dict:
     df = pd.read_csv(path, parse_dates=["date"])
 
     df["returns"] = df["total_asset"].pct_change()

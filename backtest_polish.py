@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from signal_engine.backtest import run_backtest
 
-def analyze_backtest(curve: pd.Series, stats: dict, output_prefix="backtest"):
+def analyze_backtest(curve: pd.Series, stats: dict, output_prefix: str = "backtest") -> dict:
     # 1. 计算每日收益
     daily_ret = curve.pct_change().dropna()
     days = len(daily_ret)

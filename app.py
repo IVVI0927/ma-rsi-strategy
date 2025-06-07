@@ -15,7 +15,7 @@ class StrategyParams(BaseModel):
     stop_loss: float = 0.03
 
 @app.post("/run_strategy")
-def run_strategy(params: StrategyParams):
+def run_strategy(params: StrategyParams) -> dict:
     df = pd.read_csv("data/hs300_daily_2023_2025.csv", index_col=0, parse_dates=True)
     df = generate_signal(df, params.ma_short, params.ma_long, params.rsi_threshold)
     profit, drawdown, _, _ = run_backtest(df, take_profit=params.take_profit, stop_loss=params.stop_loss)

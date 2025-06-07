@@ -7,11 +7,11 @@ from signal_engine.portfolio_builder import build_portfolio
 app = FastAPI()
 
 @app.get("/")
-def root():
+def root() -> dict:
     return {"message": "Quant Portfolio API is running."}
 
 @app.get("/recommend")
-def get_recommendations():
+def get_recommendations() -> dict:
     path = "today_recommendations.csv"
     if not os.path.exists(path):
         return {"status": "error", "message": "No recommendation file found."}
@@ -27,7 +27,7 @@ class PortfolioRequest(BaseModel):
     max_stocks: int = 5
 
 @app.post("/recommend_portfolio/")
-def recommend_portfolio(request: PortfolioRequest):
+def recommend_portfolio(request: PortfolioRequest) -> dict:
     try:
         df = pd.read_csv("today_recommendations.csv")
         portfolio = build_portfolio(df, capital=request.capital, max_stocks=request.max_stocks)

@@ -15,7 +15,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def main():
+def main() -> None:
     # 获取所有A股代码
     all_codes = [
         f.replace(".csv", "")

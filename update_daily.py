@@ -2,7 +2,7 @@ from signal_engine.backtest import run_backtest
 from signal_engine.recommend import get_top_stocks
 import pandas as pd
 
-def update_and_save():
+def update_and_save() -> None:
     print("▶▶▶ Running update_daily.py")
     
     # — 可选回测 & 保存 —

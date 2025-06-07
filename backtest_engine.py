@@ -12,7 +12,7 @@ data = pd.read_csv("data/hs300_daily_2025_01.csv", parse_dates=["date"])
 data = data.sort_values(by=["date", "code"]).reset_index(drop=True)
 
 # 每日推荐结果（模拟）
-def get_daily_recommendations(date):
+def get_daily_recommendations(date: str) -> list:
     try:
         df = pd.read_csv("today_recommendations.csv")
         df = df[df["date"] == date]
@@ -21,12 +21,12 @@ def get_daily_recommendations(date):
         return []
 
 # 获取个股某日价格?
-def get_price(code, date):
+def get_price(code: str, date: str) -> float:
     row = data[(data["code"] == code) & (data["date"] == date)]
     return row["close"].values[0] if not row.empty else None
 
 # 主回测函数
-def run_backtest():
+def run_backtest() -> None:
     trading_days = sorted(data["date"].unique())
     current_cash = initial_capital
     positions = {}  # {code: {"shares": int, "buy_price": float}}

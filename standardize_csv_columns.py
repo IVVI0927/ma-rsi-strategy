@@ -4,7 +4,7 @@ import os
 data_dir = "data"
 standard_cols = {"date", "close"}  # 可以扩展支持 open, high, low, volume 等
 
-def standardize_file(file_path):
+def standardize_file(file_path: str) -> None:
     df = pd.read_csv(file_path)
     original_cols = list(df.columns)
     lower_cols = [col.lower().strip() for col in original_cols]

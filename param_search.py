@@ -1,7 +1,7 @@
 import pandas as pd
 from signal_engine.backtest import run_backtest
 
-def grid_search(top_n_list, hold_days_list, start_date="2025-01-10", end_date="2025-01-16"):
+def grid_search(top_n_list: list, hold_days_list: list, start_date: str = "2025-01-10", end_date: str = "2025-01-16") -> None:
     records = []
     for top_n in top_n_list:
         for hold_days in hold_days_list:

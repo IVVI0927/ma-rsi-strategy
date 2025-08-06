@@ -1,0 +1,255 @@
+2025-08-06 22:00:42,585 - app - INFO - API server starting up
+2025-08-06 22:00:42,585 - app - INFO - API server starting up
+2025-08-06 22:03:54,805 - app - INFO - Root endpoint accessed
+2025-08-06 22:03:54,805 - app - INFO - Root endpoint accessed
+2025-08-06 22:03:54,806 - access - INFO - Request processed
+2025-08-06 22:04:45,150 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,150 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,150 - access - INFO - Request processed
+2025-08-06 22:04:45,152 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,152 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,152 - access - INFO - Request processed
+2025-08-06 22:04:45,154 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,154 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,155 - access - INFO - Request processed
+2025-08-06 22:04:45,156 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,156 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,157 - access - INFO - Request processed
+2025-08-06 22:04:45,159 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,159 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,159 - access - INFO - Request processed
+2025-08-06 22:04:45,160 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,160 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,161 - access - INFO - Request processed
+2025-08-06 22:04:45,162 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,162 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,162 - access - INFO - Request processed
+2025-08-06 22:04:45,163 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,163 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,163 - access - INFO - Request processed
+2025-08-06 22:04:45,165 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,165 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,166 - access - INFO - Request processed
+2025-08-06 22:04:45,167 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,167 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,168 - access - INFO - Request processed
+2025-08-06 22:04:45,169 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,169 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,169 - access - INFO - Request processed
+2025-08-06 22:04:45,170 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,170 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,170 - access - INFO - Request processed
+2025-08-06 22:04:45,172 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,172 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,172 - access - INFO - Request processed
+2025-08-06 22:04:45,173 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,173 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,173 - access - INFO - Request processed
+2025-08-06 22:04:45,175 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,175 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,175 - access - INFO - Request processed
+2025-08-06 22:04:45,176 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,176 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,176 - access - INFO - Request processed
+2025-08-06 22:04:45,177 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,177 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,177 - access - INFO - Request processed
+2025-08-06 22:04:45,178 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,178 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,178 - access - INFO - Request processed
+2025-08-06 22:04:45,179 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,179 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,180 - access - INFO - Request processed
+2025-08-06 22:04:45,181 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,181 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,181 - access - INFO - Request processed
+2025-08-06 22:04:45,182 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,182 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,183 - access - INFO - Request processed
+2025-08-06 22:04:45,184 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,184 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,184 - access - INFO - Request processed
+2025-08-06 22:04:45,185 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,185 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,185 - access - INFO - Request processed
+2025-08-06 22:04:45,186 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,186 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,187 - access - INFO - Request processed
+2025-08-06 22:04:45,188 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,188 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,188 - access - INFO - Request processed
+2025-08-06 22:04:45,189 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,189 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,189 - access - INFO - Request processed
+2025-08-06 22:04:45,190 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,190 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,190 - access - INFO - Request processed
+2025-08-06 22:04:45,191 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,191 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,191 - access - INFO - Request processed
+2025-08-06 22:04:45,192 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,192 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,193 - access - INFO - Request processed
+2025-08-06 22:04:45,194 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,194 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,194 - access - INFO - Request processed
+2025-08-06 22:04:45,195 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,195 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,195 - access - INFO - Request processed
+2025-08-06 22:04:45,197 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,197 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,197 - access - INFO - Request processed
+2025-08-06 22:04:45,198 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,198 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,198 - access - INFO - Request processed
+2025-08-06 22:04:45,199 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,199 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,199 - access - INFO - Request processed
+2025-08-06 22:04:45,200 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,200 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,200 - access - INFO - Request processed
+2025-08-06 22:04:45,202 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,202 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,202 - access - INFO - Request processed
+2025-08-06 22:04:45,203 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,203 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,203 - access - INFO - Request processed
+2025-08-06 22:04:45,204 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,204 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,204 - access - INFO - Request processed
+2025-08-06 22:04:45,205 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,205 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,206 - access - INFO - Request processed
+2025-08-06 22:04:45,207 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,207 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,207 - access - INFO - Request processed
+2025-08-06 22:04:45,208 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,208 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,208 - access - INFO - Request processed
+2025-08-06 22:04:45,209 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,209 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,210 - access - INFO - Request processed
+2025-08-06 22:04:45,211 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,211 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,211 - access - INFO - Request processed
+2025-08-06 22:04:45,212 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,212 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,212 - access - INFO - Request processed
+2025-08-06 22:04:45,213 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,213 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,213 - access - INFO - Request processed
+2025-08-06 22:04:45,215 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,215 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,215 - access - INFO - Request processed
+2025-08-06 22:04:45,216 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,216 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,216 - access - INFO - Request processed
+2025-08-06 22:04:45,217 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,217 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,217 - access - INFO - Request processed
+2025-08-06 22:04:45,218 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,218 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,219 - access - INFO - Request processed
+2025-08-06 22:04:45,220 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,220 - app - INFO - Root endpoint accessed
+2025-08-06 22:04:45,220 - access - INFO - Request processed
+2025-08-06 22:04:45,221 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,221 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,224 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,224 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,224 - access - INFO - Request processed
+2025-08-06 22:04:45,225 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,225 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,226 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,226 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,226 - access - INFO - Request processed
+2025-08-06 22:04:45,227 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,227 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,228 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,228 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,228 - access - INFO - Request processed
+2025-08-06 22:04:45,229 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,229 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,229 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,229 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,230 - access - INFO - Request processed
+2025-08-06 22:04:45,231 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,231 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,231 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,231 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,232 - access - INFO - Request processed
+2025-08-06 22:04:45,233 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,233 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,233 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,233 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,233 - access - INFO - Request processed
+2025-08-06 22:04:45,235 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,235 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,235 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,235 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,235 - access - INFO - Request processed
+2025-08-06 22:04:45,236 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,236 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,237 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,237 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,237 - access - INFO - Request processed
+2025-08-06 22:04:45,238 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,238 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,239 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,239 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,239 - access - INFO - Request processed
+2025-08-06 22:04:45,240 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,240 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,240 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,240 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,241 - access - INFO - Request processed
+2025-08-06 22:04:45,242 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,242 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,242 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,242 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,242 - access - INFO - Request processed
+2025-08-06 22:04:45,243 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,243 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,244 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,244 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,244 - access - INFO - Request processed
+2025-08-06 22:04:45,245 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,245 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,246 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,246 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,246 - access - INFO - Request processed
+2025-08-06 22:04:45,247 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,247 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,248 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,248 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,248 - access - INFO - Request processed
+2025-08-06 22:04:45,249 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,249 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,249 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,249 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,250 - access - INFO - Request processed
+2025-08-06 22:04:45,251 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,251 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,251 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,251 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,252 - access - INFO - Request processed
+2025-08-06 22:04:45,253 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,253 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,253 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,253 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,253 - access - INFO - Request processed
+2025-08-06 22:04:45,254 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,254 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,255 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,255 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,255 - access - INFO - Request processed
+2025-08-06 22:04:45,256 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,256 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,257 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,257 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,257 - access - INFO - Request processed
+2025-08-06 22:04:45,258 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,258 - app - INFO - Getting recommendations
+2025-08-06 22:04:45,258 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,258 - app - INFO - Successfully retrieved 20 recommendations
+2025-08-06 22:04:45,259 - access - INFO - Request processed

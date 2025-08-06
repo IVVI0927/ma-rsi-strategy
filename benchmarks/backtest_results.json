@@ -1,0 +1,41 @@
+{
+  "RSI_MACD_BB": {
+    "strategy_name": "RSI_MACD_BB",
+    "total_return": -0.6022425084295522,
+    "annual_return": -0.7809476581840238,
+    "volatility": 0.7498319906863717,
+    "sharpe_ratio": -1.626999607536607,
+    "sortino_ratio": -0.8903798449685875,
+    "max_drawdown": 0.6318001905187324,
+    "win_rate": 0.5490196078431373,
+    "total_trades": 153,
+    "stocks_traded": 20,
+    "avg_trades_per_stock": 14.65
+  },
+  "Fundamental": {
+    "strategy_name": "Fundamental",
+    "total_return": 0.2360720839505308,
+    "annual_return": 2.1933015961802753,
+    "volatility": 0.456993573222678,
+    "sharpe_ratio": 2.7026994958820376,
+    "sortino_ratio": 14.743128902532538,
+    "max_drawdown": 0.12335134009758998,
+    "win_rate": 0.45652173913043476,
+    "total_trades": 46,
+    "stocks_traded": 19,
+    "avg_trades_per_stock": 8.368421052631579
+  },
+  "Sentiment": {
+    "strategy_name": "Sentiment",
+    "total_return": 37.14153975757436,
+    "annual_return": 1.3046957709085234,
+    "volatility": 0.7255314893329057,
+    "sharpe_ratio": 1.4410026625031527,
+    "sortino_ratio": 4.55924131899103,
+    "max_drawdown": 0.42873074997350774,
+    "win_rate": 0.45768880800727935,
+    "total_trades": 1099,
+    "stocks_traded": 20,
+    "avg_trades_per_stock": 226.3
+  }
+}

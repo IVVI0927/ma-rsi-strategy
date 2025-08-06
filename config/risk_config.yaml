@@ -1,0 +1,235 @@
+# Risk Management Configuration
+
+# Portfolio-Level Risk Limits
+portfolio_risk:
+  # Maximum risk exposure limits
+  max_leverage: 1.0  # No leverage allowed
+  max_gross_exposure: 1.0  # 100% of NAV
+  max_net_exposure: 1.0   # 100% of NAV
+  
+  # Concentration limits
+  max_position_size: 0.10  # 10% max per single position
+  max_sector_concentration: 0.30  # 30% max per sector
+  max_industry_concentration: 0.20  # 20% max per industry
+  max_single_stock_adv: 0.05  # 5% of average daily volume
+  
+  # Correlation limits
+  max_portfolio_correlation: 0.70  # Max avg correlation between positions
+  max_position_correlation: 0.80   # Max correlation between any 2 positions
+
+# Daily Risk Limits
+daily_limits:
+  max_daily_loss_pct: 0.02    # 2% max daily loss
+  max_daily_trades: 100       # Maximum trades per day
+  max_daily_turnover: 0.50    # 50% max daily turnover
+  
+  # Intraday limits
+  max_intraday_drawdown: 0.03  # 3% max intraday drawdown
+  max_consecutive_losses: 5     # Max consecutive losing trades
+
+# Position-Level Risk Controls
+position_risk:
+  # Stop loss settings
+  stop_loss:
+    enabled: true
+    type: "trailing"  # fixed, trailing, volatility_based
+    default_pct: 0.03  # 3% default stop loss
+    
+    # Trailing stop loss
+    trailing_distance: 0.02  # 2% trailing distance
+    min_profit_to_trail: 0.01  # 1% min profit before trailing
+    
+    # Volatility-based stop loss
+    volatility_multiplier: 2.0  # 2x ATR
+    volatility_period: 20       # 20-day ATR
+  
+  # Take profit settings
+  take_profit:
+    enabled: true
+    default_pct: 0.06  # 6% default take profit
+    risk_reward_ratio: 2.0  # 2:1 risk/reward
+  
+  # Position sizing risk
+  sizing:
+    min_position_size: 100      # 100 shares minimum (1 lot)
+    max_position_size_pct: 0.10 # 10% max position size
+    
+    # Kelly Criterion parameters
+    kelly_scaling: 0.25         # Use 25% of Kelly fraction
+    max_kelly_fraction: 0.10    # Cap Kelly at 10%
+    
+    # Volatility-based sizing
+    volatility_target: 0.15     # 15% volatility target
+    volatility_lookback: 60     # 60-day volatility calculation
+
+# Market Risk Controls
+market_risk:
+  # Market regime detection
+  regime_detection:
+    enabled: true
+    volatility_threshold: 0.25  # High volatility threshold
+    drawdown_threshold: 0.15    # Market stress threshold
+    
+    # Risk reduction in stress conditions
+    stress_position_reduction: 0.50  # Reduce positions by 50%
+    stress_new_position_ban: true    # Ban new positions in stress
+  
+  # Market hours risk
+  trading_hours:
+    pre_market_trading: false
+    after_hours_trading: false
+    
+    # Risk adjustments by time
+    opening_risk_multiplier: 1.5   # Higher risk in first 30 min
+    closing_risk_multiplier: 1.2   # Higher risk in last 30 min
+
+# Liquidity Risk
+liquidity_risk:
+  # Minimum liquidity requirements
+  min_daily_volume: 1000000    # 1M RMB minimum daily volume
+  min_avg_daily_volume: 5000000 # 5M RMB average daily volume (20 days)
+  
+  # Maximum participation rates
+  max_adv_participation: 0.05   # 5% of average daily volume
+  max_single_order_size: 0.01   # 1% of daily volume per order
+  
+  # Liquidity scoring
+  liquidity_score_threshold: 0.6  # Minimum liquidity score
+  
+# Operational Risk
+operational_risk:
+  # System limits
+  max_api_calls_per_minute: 100
+  max_orders_per_minute: 50
+  max_modifications_per_order: 3
+  
+  # Error handling
+  max_consecutive_errors: 10
+  error_cooldown_minutes: 5
+  
+  # Connection monitoring
+  max_connection_downtime_seconds: 30
+  heartbeat_interval_seconds: 10
+
+# Model Risk
+model_risk:
+  # Model validation
+  min_backtest_period_days: 252   # 1 year minimum backtest
+  min_out_of_sample_ratio: 0.25   # 25% out-of-sample testing
+  max_overfitting_ratio: 1.5      # Max in-sample vs out-of-sample ratio
+  
+  # Performance decay detection
+  performance_monitoring_days: 60
+  performance_decay_threshold: 0.20  # 20% performance decay alert
+  
+  # Model ensemble
+  min_models_for_ensemble: 3
+  max_model_weight: 0.50  # Max 50% weight on single model
+
+# Risk Monitoring and Alerts
+monitoring:
+  # Alert thresholds (as % of limit)
+  warning_threshold: 0.80   # Warning at 80% of limit
+  critical_threshold: 0.95  # Critical alert at 95% of limit
+  
+  # Monitoring frequency
+  real_time_monitoring: true
+  risk_report_frequency: "daily"
+  stress_test_frequency: "weekly"
+  
+  # Alert channels
+  alert_channels:
+    - "log"
+    - "file"
+    - "email"  # If configured
+  
+  # Risk metrics to track
+  tracked_metrics:
+    - "portfolio_var_95"
+    - "portfolio_var_99"
+    - "max_drawdown"
+    - "position_concentration"
+    - "sector_concentration"
+    - "daily_pnl"
+    - "leverage"
+    - "liquidity_score"
+
+# Stress Testing
+stress_testing:
+  # Scenario definitions
+  scenarios:
+    market_crash:
+      equity_shock: -0.20      # 20% market drop
+      volatility_shock: 2.0    # 2x volatility increase
+      correlation_shock: 0.9   # Correlations go to 0.9
+    
+    liquidity_crisis:
+      bid_ask_spread_shock: 3.0  # 3x wider spreads
+      volume_shock: 0.3          # 30% of normal volume
+      market_impact_shock: 2.0   # 2x market impact
+    
+    interest_rate_shock:
+      rate_shock_bp: 200       # 200 bp rate increase
+      duration_impact: true
+    
+    sector_rotation:
+      sector_shock_range: [-0.15, 0.15]  # +/-15% sector shock
+      correlation_breakdown: true
+
+# Regulatory and Compliance
+compliance:
+  # Position limits (regulatory)
+  max_single_stock_ownership: 0.05  # 5% max ownership of any stock
+  
+  # Reporting requirements
+  large_position_threshold: 0.03  # Report positions > 3%
+  unusual_activity_threshold: 2.0 # Report if 2x normal activity
+  
+  # Record keeping
+  trade_record_retention_days: 2555  # 7 years
+  risk_record_retention_days: 1095   # 3 years
+
+# Emergency Procedures
+emergency:
+  # Circuit breakers
+  circuit_breaker_enabled: true
+  circuit_breaker_threshold: 0.05  # 5% loss triggers circuit breaker
+  
+  # Emergency liquidation
+  emergency_liquidation_enabled: true
+  emergency_liquidation_threshold: 0.10  # 10% loss triggers liquidation
+  
+  # Risk override
+  risk_override_enabled: false  # Require manual intervention
+  risk_override_authorization: ["senior_trader", "risk_manager"]
+  
+# Risk Model Parameters
+risk_model:
+  # Return model
+  return_estimation_window: 252   # 1 year
+  return_decay_factor: 0.97       # Exponential decay
+  
+  # Volatility model
+  volatility_model: "garch"       # ewma, garch, realized
+  volatility_window: 60           # 60 days
+  volatility_decay_factor: 0.94
+  
+  # Correlation model
+  correlation_window: 120         # 120 days
+  correlation_decay_factor: 0.95
+  min_correlation_observations: 60
+  
+  # Risk factor model
+  risk_factors:
+    - "market"
+    - "size" 
+    - "value"
+    - "momentum"
+    - "quality"
+    - "volatility"
+  
+  factor_exposure_limits:
+    market: [-0.1, 1.1]    # -10% to 110% market exposure
+    size: [-0.3, 0.3]      # +/-30% size exposure
+    value: [-0.3, 0.3]     # +/-30% value exposure
+    momentum: [-0.3, 0.3]  # +/-30% momentum exposure

@@ -1,0 +1,197 @@
+# A-Share Quantitative Trading System Configuration
+
+# Trading Parameters
+trading:
+  market: "A-Share"
+  initial_capital: 1000000  # 1M RMB
+  
+  # Trading hours (Beijing time)
+  trading_hours:
+    morning:
+      start: "09:30"
+      end: "11:30"
+    afternoon:
+      start: "13:00"
+      end: "15:00"
+  
+  # Trading days
+  trading_days:
+    - "monday"
+    - "tuesday" 
+    - "wednesday"
+    - "thursday"
+    - "friday"
+  
+  # Commission and fees
+  commission:
+    rate: 0.0003  # 3 basis points
+    minimum: 5.0  # 5 RMB minimum
+    maximum: null  # No maximum
+  
+  # Market impact and slippage
+  slippage:
+    rate: 0.0005  # 5 basis points
+    market_impact_factor: 0.0001  # Additional impact based on order size
+  
+  # Order execution
+  execution:
+    order_timeout_seconds: 300
+    max_retries: 3
+    execution_delay_ms: 100  # Simulated execution delay
+
+# Portfolio Management
+portfolio:
+  max_positions: 20
+  rebalance_frequency: "daily"  # daily, weekly, monthly
+  target_leverage: 1.0  # No leverage
+  
+  # Position sizing
+  position_sizing:
+    method: "kelly_conservative"  # kelly, equal_weight, volatility_target
+    kelly_scaling: 0.25  # Use 25% of Kelly fraction
+    volatility_target: 0.15  # 15% annual volatility target
+    min_position_size: 100  # Minimum 100 shares (1 lot)
+    max_position_size: 0.1  # 10% of portfolio max per position
+
+# Data Sources
+data_sources:
+  primary: "jqdata"
+  backup: "tushare"
+  
+  # Data refresh
+  refresh:
+    market_data: "daily"
+    fundamental_data: "weekly"
+    news_sentiment: "hourly"
+  
+  # Data quality
+  quality_checks:
+    min_completeness: 0.95  # 95% data completeness required
+    max_outlier_ratio: 0.01  # 1% outliers allowed
+    consistency_checks: true
+  
+  # Cache settings
+  cache:
+    enabled: true
+    ttl_hours: 24
+    max_size_mb: 1000  # 1GB cache limit
+
+# Strategy Configuration
+strategies:
+  # Multi-factor strategy
+  multi_factor:
+    enabled: true
+    weight: 1.0
+    
+    factors:
+      technical:
+        weight: 0.4
+        indicators:
+          - name: "rsi"
+            period: 14
+            weight: 0.3
+          - name: "macd"
+            fast: 12
+            slow: 26
+            signal: 9
+            weight: 0.3
+          - name: "bollinger_bands"
+            period: 20
+            std_dev: 2.0
+            weight: 0.4
+      
+      fundamental:
+        weight: 0.4
+        metrics:
+          - name: "pe_ratio"
+            weight: 0.3
+            threshold_low: 0
+            threshold_high: 30
+          - name: "pb_ratio" 
+            weight: 0.3
+            threshold_low: 0
+            threshold_high: 3
+          - name: "roe"
+            weight: 0.4
+            threshold_low: 0.1
+      
+      sentiment:
+        weight: 0.2
+        sources:
+          - name: "news_sentiment"
+            weight: 0.6
+          - name: "social_sentiment"
+            weight: 0.4
+        
+        confidence_threshold: 0.3
+  
+  # Momentum strategy
+  momentum:
+    enabled: false
+    weight: 0.0
+    lookback_periods: [20, 60, 120]
+    
+  # Mean reversion strategy  
+  mean_reversion:
+    enabled: false
+    weight: 0.0
+    lookback_period: 20
+    deviation_threshold: 2.0
+
+# AI/ML Models
+ai_models:
+  sentiment_analysis:
+    provider: "deepseek"
+    model: "deepseek-chat"
+    confidence_threshold: 0.5
+    batch_size: 10
+    rate_limit_rpm: 60
+  
+  price_prediction:
+    enabled: false
+    model_type: "lstm"
+    lookback_days: 60
+    prediction_days: 5
+
+# Performance Monitoring
+monitoring:
+  metrics:
+    - "total_return"
+    - "sharpe_ratio"
+    - "max_drawdown"
+    - "calmar_ratio"
+    - "win_rate"
+    - "profit_factor"
+  
+  alerts:
+    enabled: true
+    channels: ["log", "file"]
+    thresholds:
+      daily_loss_pct: 0.03  # Alert if daily loss > 3%
+      drawdown_pct: 0.10    # Alert if drawdown > 10%
+      position_concentration: 0.15  # Alert if single position > 15%
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  handlers:
+    console:
+      enabled: true
+      level: "INFO"
+    
+    file:
+      enabled: true
+      level: "DEBUG"
+      filename: "logs/trading_system.log"
+      max_bytes: 10485760  # 10MB
+      backup_count: 5
+    
+    trade_log:
+      enabled: true
+      filename: "logs/trades.log"
+      level: "INFO"
+
+# Environment
+environment: "development"  # development, testing, production

@@ -309,29 +309,3 @@ python tests/validate_backtest.py
 3. **Risk Limits**: Conservative settings for initial deployment
 4. **Monitoring**: 24/7 system health monitoring
 5. **Compliance**: Maintain audit logs for regulatory requirements
-
-### Limitations
-- **Paper Trading Only**: No live broker integration
-- **A-Share Focus**: Designed specifically for Chinese market
-- **Security Dependencies**: Requires admin privileges for air-gapped mode
-- **API Limits**: Respect data provider rate limits
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## ⚖️ Disclaimer
-
-This software is for educational and research purposes only. Past performance does not guarantee future results. Trading involves substantial risk of loss. Use at your own risk.
-
----
-
-**Built with ❤️ for quantitative trading excellence**
